@@ -1,0 +1,74 @@
+/* Reset & Base */
+:root {
+    --primary-color: #FFD700; /* Yellow */
+    --secondary-color: #000000; /* Black */
+    --text-light: #f4f4f4;
+    --text-dark: #222222;
+}
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.aboutContainer {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sectionTitle {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    /* text-shadow: 0 2px 15px var(--primary-color); */
+}
+/* Card Base */
+.card {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a); 
+    /* box-shadow: 0 10px 25px rgba(255, 255, 0, 0.2);  */
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 0, 0.3);
+}
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+.card p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: white;
+}
+/* Intro card */
+.introCard {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+/* Skill card group */
+.cardGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+}

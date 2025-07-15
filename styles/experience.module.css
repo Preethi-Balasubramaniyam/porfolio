@@ -1,0 +1,89 @@
+/* Experience.module.css */
+
+.container {
+    background: #000;
+    color: #fff;
+    padding: 3rem 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #facc15;
+    /* text-shadow: 0 2px 15px #facc15; */
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .highlight {
+    font-weight: bold;
+  }
+  
+  .card {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    /* border: 1px solid #333; */
+    padding: 2rem;
+    /* border-radius: 20px; */
+    margin-bottom: 2rem;
+    /* box-shadow: 0 10px 25px rgba(255, 255, 0, 0.2); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .leftCard {
+    margin-left: 0;
+    margin-right: auto;
+    border-left: 4px solid #facc15;
+    border-radius: 0 20px 20px 0;
+  }
+  
+  .rightCard {
+    margin-left: auto;
+    margin-right: 0;
+    border-right: 4px solid #facc15;
+    border-radius: 20px 0 0 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .leftCard,
+    .rightCard {
+      margin: 0 auto;
+      border: none;
+      border-radius: 20px;
+    }
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 0, 0.3);
+  }
+  
+  .role {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .company {
+    color: #facc15;
+  }
+  
+  .duration {
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    margin-top: 0.25rem;
+  }
+  
+  .details {
+    margin-top: 1rem;
+    list-style-type: square;
+    padding-left: 1.25rem;
+    color: #e5e5e5;
+  }
+  
+  .details li {
+    margin-bottom: 0.5rem;
+  }

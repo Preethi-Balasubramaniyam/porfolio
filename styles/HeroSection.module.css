@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000;
+  color: white;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.avatar {
+  width: 149px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #FFD700;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.iconLink {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.resumeButton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #FFD700;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

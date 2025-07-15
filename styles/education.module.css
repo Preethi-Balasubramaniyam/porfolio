@@ -1,0 +1,59 @@
+.container {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 1.5rem;
+  }
+  
+  .section {
+    max-width: 90rem; 
+    margin: 0 auto;
+  }
+  
+  .heading {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #facc15; 
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    text-align: center; 
+  }
+  
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3-column grid */
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: #111111;
+    border: 1px solid rgba(234, 179, 8, 0.4); 
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: #eab308; 
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+    transform: scale(1.02);
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fde047; 
+  }
+  
+  .cardText {
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    margin-top: 0.25rem;
+  }
+  
+  .cardScore {
+    font-size: 0.875rem;
+    color: #facc15;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
