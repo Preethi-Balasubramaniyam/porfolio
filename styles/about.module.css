@@ -1,5 +1,5 @@
 /* Reset & Base */
-:root {
+.aboutRoot {
     --primary-color: #FFD700; /* Yellow */
     --secondary-color: #000000; /* Black */
     --text-light: #f4f4f4;
@@ -9,6 +9,7 @@ body {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
+
 .aboutContainer {
     padding: 4rem 2rem;
     background-color: var(--secondary-color);
