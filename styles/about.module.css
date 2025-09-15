@@ -5,15 +5,11 @@
     --text-light: #f4f4f4;
     --text-dark: #222222;
 }
-body {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
 
 .aboutContainer {
     padding: 4rem 2rem;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: #000000;
+    color: #FFD700;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .sectionTitle {
