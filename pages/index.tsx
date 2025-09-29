@@ -5,7 +5,8 @@ import About from "@/components/about";
 import Education from "@/components/education";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
-// import Contact from "@/components/contact";
+import Contact from "@/components/contact";
+import Tools from "@/components/tools";
 
 
 
@@ -23,10 +24,10 @@ export default function Home() {
     <HeroSection/>
     <About/>
     <Experience/>
-
+<Tools/>
     <Education/>
     <Projects/>
-    {/* <Contact/> */}
+    <Contact/>
     </div>
        
     </>

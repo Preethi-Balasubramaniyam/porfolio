@@ -15,20 +15,23 @@ const Header = () => {
     >
       <Container>
         <div className={styles.headerLeft}>
-          <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-            Preethi Balasubramaniyam
+          <Link href="/" className={styles.logo}>
+            PB
           </Link>
         </div>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={() => setExpanded(!expanded)}
+          className={styles.navToggle}
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ms-auto ${styles.headerRight}`}>
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/experience">Experience</Nav.Link>
-            <Nav.Link href="/project">Projects & Education</Nav.Link>
-            {/* <Nav.Link href="/contact">Contact</Nav.Link> */}
+            <Link href="/" className={styles.navLink}>Home</Link>
+            <Link href="/about" className={styles.navLink}>About</Link>
+            <Link href="/experience" className={styles.navLink}>Experience</Link>
+            <Link href="/tools" className={styles.navLink}>Tools</Link>
+            <Link href="/project" className={styles.navLink}>Projects</Link>
+            <Link href="/contact" className={styles.navLink}>Contact</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

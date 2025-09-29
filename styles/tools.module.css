@@ -1,0 +1,235 @@
+/* Tools Constellation Layout */
+.container {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: var(--bg-primary);
+    background-image: var(--bg-gradient);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+/* Constellation Container */
+.constellation {
+    position: relative;
+    height: 600px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Central Hub */
+.centralHub {
+    position: absolute;
+
+   transform: translate(-1%, -10%);
+    z-index: 10;
+}
+
+.hubContent {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 50px rgba(124, 58, 237, 0.5),
+        0 0 100px rgba(6, 182, 212, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.hubIcon {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Tech Orbit */
+.techOrbit {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tech Icons */
+.techIcon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 5;
+}
+
+.techIcon svg {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.toolName {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.techIcon:hover .toolName {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Connection Lines */
+.connectionSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.connectionSvg line {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        stroke-opacity: 0.3;
+    }
+
+    50% {
+        stroke-opacity: 0.8;
+    }
+}
+
+/* Orbital Ring */
+.orbitalRing {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 400px;
+    height: 450px;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.orbitalRing::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 3rem 1rem;
+    }
+
+    .constellation {
+        height: 500px;
+        max-width: 600px;
+    }
+
+    .hubContent {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hubIcon {
+        font-size: 2rem;
+    }
+
+    .techIcon svg {
+        font-size: 2rem;
+    }
+
+    .orbitalRing {
+        width: 350px;
+        height: 350px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .constellation {
+        height: 400px;
+        max-width: 400px;
+    }
+
+    .hubContent {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hubIcon {
+        font-size: 1.5rem;
+    }
+
+    .techIcon svg {
+        font-size: 1.5rem;
+    }
+
+    .orbitalRing {
+        width: 250px;
+        height: 250px;
+    }
+
+    .toolName {
+        font-size: 0.7rem;
+    }
+}

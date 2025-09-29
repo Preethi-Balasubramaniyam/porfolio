@@ -1,17 +1,35 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #0f0a1e;
+  --bg-secondary: #1a1330;
+  --bg-gradient: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), transparent);
+  --text-primary: #ffffff;
+  --text-secondary: #a8a8a8;
+  --accent-purple: #7877c6;
+  --accent-blue: #4f46e5;
+  --accent-glow: rgba(120, 119, 198, 0.4);
+  --card-bg: rgba(26, 19, 48, 0.8);
+  --card-border: rgba(120, 119, 198, 0.2);
+  --hover-glow: rgba(120, 119, 198, 0.6);
+}
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: #0a0a0a;
-  background: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  background-image: var(--bg-gradient);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 * {
@@ -23,10 +41,34 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-glow);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

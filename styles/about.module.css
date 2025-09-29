@@ -1,71 +1,505 @@
-/* Reset & Base */
-.aboutRoot {
-    --primary-color: #FFD700; /* Yellow */
-    --secondary-color: #000000; /* Black */
-    --text-light: #f4f4f4;
-    --text-dark: #222222;
+.container {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: var(--bg-primary);
+  background-image: var(--bg-gradient);
 }
 
-.aboutContainer {
-    padding: 4rem 2rem;
-    background-color: #000000;
-    color: #FFD700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.sectionTitle {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-    /* text-shadow: 0 2px 15px var(--primary-color); */
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
 }
-/* Card Base */
-.card {
-    background: linear-gradient(145deg, #0d0d0d, #1a1a1a); 
-    /* box-shadow: 0 10px 25px rgba(255, 255, 0, 0.2);  */
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(255, 255, 0, 0.3);
+
+.subheading {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
-.card h2 {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    color: var(--primary-color);
+
+.introSection {
+  margin-bottom: 5rem;
 }
-.card p {
-    line-height: 1.6;
-    font-size: 1rem;
-    color: white;
-}
-/* Intro card */
+
 .introCard {
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
-/* Skill card group */
-.cardGroup {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
+
+.introCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
 }
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  border-radius: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.greeting {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--accent-purple);
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.detailedDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Option 1: Gradient Text Highlight */
+.highlight {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Option 2: Underlined Highlight */
+.highlight2 {
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+}
+
+.highlight2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  border-radius: 2px;
+}
+
+/* Option 3: Background Highlight */
+.highlight3 {
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(120, 119, 198, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(120, 119, 198, 0.3);
+}
+
+/* Option 4: Glowing Highlight */
+.highlight4 {
+  color: var(--accent-purple);
+  font-weight: 600;
+  white-space: nowrap;
+  text-shadow: 0 0 10px rgba(120, 119, 198, 0.5);
+  filter: drop-shadow(0 0 8px rgba(120, 119, 198, 0.3));
+}
+
+/* Option 5: Border Highlight */
+.highlight5 {
+  color: var(--accent-purple);
+  font-weight: 600;
+  white-space: nowrap;
+  border: 2px solid var(--accent-purple);
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+  background: rgba(120, 119, 198, 0.1);
+}
+
+.skillsSection {
+  margin-top: 3rem;
+}
+
+.skillsHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
 .skillCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-/* Responsive */
-@media (max-width: 600px) {
-    .sectionTitle {
-        font-size: 2.2rem;
-    }
-    .card {
-        padding: 1.5rem;
-    }
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skillCard:hover::before {
+  opacity: 1;
+}
+
+.skillCard:hover {
+  border-color: var(--accent-purple);
+  box-shadow: 0 20px 40px rgba(120, 119, 198, 0.2);
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(120, 119, 198, 0.1);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.skillTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skillDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.skillTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techBadge {
+  padding: 0.375rem 0.875rem;
+  background: rgba(120, 119, 198, 0.1);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.techBadge:hover {
+  background: rgba(120, 119, 198, 0.2);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* Work Journey Section */
+.workSection {
+  margin-top: 4rem;
+}
+
+.sectionHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.workTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.workItem {
+  background: rgba(120, 119, 198, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.workItem:hover {
+  background: rgba(120, 119, 198, 0.1);
+  border-color: var(--accent-purple);
+}
+
+.workHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.workCompany {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.workPeriod {
+  font-size: 0.9rem;
+  color: var(--accent-purple);
+  font-weight: 500;
+}
+
+.workDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Featured Work Section */
+.featuredSection {
+  margin-top: 4rem;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.featuredCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.featuredCard:hover {
+  border-color: var(--accent-purple);
+  box-shadow: 0 15px 30px rgba(120, 119, 198, 0.15);
+}
+
+.featuredHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.featuredTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.featuredStatus {
+  padding: 0.25rem 0.75rem;
+  background: rgba(120, 119, 198, 0.2);
+  border: 1px solid var(--accent-purple);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-purple);
+}
+
+.featuredDescription {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.featuredTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  padding: 0.25rem 0.625rem;
+  background: rgba(120, 119, 198, 0.1);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Highlights Section */
+.highlightsSection {
+  margin-top: 4rem;
+}
+
+.highlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(120, 119, 198, 0.05);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  background: rgba(120, 119, 198, 0.1);
+  color: var(--text-primary);
+}
+
+.highlight::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-purple);
+  color: var(--text-primary);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Vision Section */
+.visionSection {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.visionText {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 6rem 1rem 2rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skillCard {
+    padding: 1.5rem;
+  }
+  
+  .profileSection {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .introCard {
+    padding: 2rem;
+  }
 }

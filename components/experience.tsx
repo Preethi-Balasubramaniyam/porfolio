@@ -1,96 +1,132 @@
-import React from 'react';
-import styles from '../styles/experience.module.css';
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "../styles/experience.module.css";
 
 const Experience = () => {
   const experiences = [
     {
-      role: 'FullStack Developer',
-      company: 'Yarkria Tech, Coimbatore',
-      duration: 'Feb 2025 – April 2025',
-      details: [
-        <>
-          Developed <span className={styles.highlight}>cross-platform mobile applications</span> using <span className={styles.highlight}>Flutter</span>, implementing modern <span className={styles.highlight}>UI/UX designs</span> and optimizing <span className={styles.highlight}>performance</span> across Android and iOS.
-        </>,
-        <>
-          Built <span className={styles.highlight}>scalable backend services</span> using <span className={styles.highlight}>Node.js</span>, <span className={styles.highlight}>Express.js</span>, and <span className={styles.highlight}>MySQL</span> to handle <span className={styles.highlight}>data persistence</span>, <span className={styles.highlight}>authentication</span>, and business logic.
-        </>,
-        <>
-          Designed and implemented <span className={styles.highlight}>RESTful API routes</span> and ensured seamless integration with frontend and mobile clients.
-        </>,
-        <>
-          Leveraged <span className={styles.highlight}>TypeScript</span> for both frontend and backend code to improve <span className={styles.highlight}>code quality</span>, <span className={styles.highlight}>maintainability</span>, and reduce <span className={styles.highlight}>runtime errors</span>.
-        </>,
-        <>
-          Collaborated in <span className={styles.highlight}>Agile teams</span>, rapidly prototyping new features and iterating based on <span className={styles.highlight}>stakeholder feedback</span>.
-        </>,
-        <>
-          Wrote <span className={styles.highlight}>unit</span> and <span className={styles.highlight}>integration tests</span> for both Flutter components and backend routes to ensure <span className={styles.highlight}>reliability</span>.
-        </>,
-        <>
-          Used <span className={styles.highlight}>Git</span> for version control and contributed actively to <span className={styles.highlight}>code reviews</span> and <span className={styles.highlight}>sprint ceremonies</span>.
-        </>,
-        <>
-          🛠️ <span className={styles.highlight}>Tech Stack</span>: Flutter, Node.js, Express.js, MySQL, TypeScript, REST API, Git, Agile, Testing (Unit & Integration), JIRA (Sprint Planning)
-        </>,
+      id: 1,
+      role: "FullStack Developer",
+      company: "Yarkria Tech",
+      location: "Coimbatore",
+      duration: "Feb 2025 – April 2025",
+      type: "Freelance",
+      description:
+        "Developed cross-platform mobile apps using Flutter with modern UI/UX and optimized performance on Android & iOS.",
+      technologies: [
+        "Flutter",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "TypeScript",
+        "REST API",
+        "Git",
+        "Agile",
+        "Testing",
+        "JIRA",
+      ],
+      achievements: [
+        "Developed cross-platform mobile apps using Flutter with modern UI/UX and optimized performance on Android & iOS.",
+        "Built scalable backend services with Node.js, Express.js, and MySQL, including authentication and data management.",
+        "Designed and implemented RESTful APIs for seamless integration with frontend and mobile clients.",
+        "Used TypeScript for frontend and backend to enhance code quality, maintainability, and reduce errors.",
+        "Collaborated in Agile teams, contributing to prototyping, code reviews, testing, and sprint ceremonies.",
       ],
     },
     {
-      role: 'FullStack Developer',
-      company: 'Akkenna Animation and Technologies, Coimbatore',
-      duration: 'Sept 2023 – Dec 2024',
-      details: [
-        <>
-          Developed <span className={styles.highlight}>scalable</span> and <span className={styles.highlight}>responsive web applications</span> using <span className={styles.highlight}>React.js</span>, <span className={styles.highlight}>Next.js</span>, and <span className={styles.highlight}>Redux Toolkit</span>, ensuring <span className={styles.highlight}>cross-device compatibility</span>.
-        </>,
-        <>
-          Implemented <span className={styles.highlight}>global state management</span> and optimized <span className={styles.highlight}>rendering performance</span> to enhance application speed and <span className={styles.highlight}>user experience</span>.
-        </>,
-        <>
-          Collaborated with <span className={styles.highlight}>UI/UX designers</span> to translate <span className={styles.highlight}>Figma designs</span> into highly functional and visually consistent components.
-        </>,
-        <>
-          Integrated <span className={styles.highlight}>RESTful APIs</span> for dynamic content rendering and ensured smooth <span className={styles.highlight}>data flow</span> between frontend and backend services.
-        </>,
-        <>
-          Performed in-depth <span className={styles.highlight}>debugging</span> using <span className={styles.highlight}>Chrome DevTools</span>, resolving critical issues for <span className={styles.highlight}>seamless user interactions</span>.
-        </>,
-        <>
-          Improved <span className={styles.highlight}>page load time</span> by 25% by implementing <span className={styles.highlight}>code splitting</span>, <span className={styles.highlight}>lazy loading</span>, and other <span className={styles.highlight}>performance best practices</span>.
-        </>,
-        <>
-          Led <span className={styles.highlight}>UI refinement initiatives</span>, boosting <span className={styles.highlight}>design consistency</span> and <span className={styles.highlight}>user satisfaction</span>.
-        </>,
-        <>
-          Participated in <span className={styles.highlight}>Agile development cycles</span>, including <span className={styles.highlight}>sprint planning</span>, <span className={styles.highlight}>reviews</span>, and <span className={styles.highlight}>retrospectives</span>.
-        </>,
-        <>
-          Adhered to <span className={styles.highlight}>software engineering best practices</span>, including <span className={styles.highlight}>modular architecture</span>, <span className={styles.highlight}>DRY principles</span>, and <span className={styles.highlight}>accessibility standards</span>.
-        </>,
-        <>
-          🛠️ <span className={styles.highlight}>Tech Stack</span>: React.js, Next.js, Redux Toolkit, JavaScript (ES6+), REST API, Chrome DevTools, Git, Agile, Figma
-        </>,
+      id: 2,
+      role: "FullStack Developer",
+      company: "Akkenna Animation and Technologies",
+      location: "Coimbatore",
+      duration: "Sept 2023 – Dec 2024",
+      type: "Full-time",
+      description:
+        "Developed scalable and responsive web applications using React.js, Next.js, and Redux Toolkit, ensuring cross-device compatibility.",
+      technologies: [
+        "React.js",
+        "Next.js",
+        "Redux Toolkit",
+        "JavaScript (ES6+)",
+        "REST API",
+        "Chrome DevTools",
+        "Git",
+        "Agile",
+        "Figma",
+      ],
+      achievements: [
+        "Developed scalable and responsive web applications using React.js, Next.js, and Redux Toolkit with cross-device compatibility.",
+        "Implemented global state management and optimized rendering performance to enhance speed and user experience.",
+        "Collaborated with UI/UX designers to convert Figma designs into functional, visually consistent components.",
+        "Integrated RESTful APIs and ensured smooth data flow between frontend and backend services.",
+        "Improved page load time by 25% through code splitting, lazy loading, and other performance best practices, following Agile cycles and software engineering best practices.",
       ],
     },
   ];
 
   return (
     <div className={styles.container}>
-      <section className={styles.section}>
-        <h1 className={styles.heading}>Professional Experience</h1>
-        {experiences.map((exp, index) => (
-        <div key={index}className={`${styles.card} ${index % 2 === 0 ? styles.leftCard : styles.rightCard}`}>
-            <h2 className={styles.role}>
-              {exp.role} <span className={styles.company}>@ {exp.company}</span>
-            </h2>
-            <p className={styles.duration}>{exp.duration}</p>
-            <ul className={styles.details}>
-              {exp.details.map((d, i) => (
-                <li key={i}>{d}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
+      <div className={styles.content}>
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className={styles.heading}>Work Experience</h1>
+          <p className={styles.subheading}>
+            I&apos;m currently looking to join a{" "}
+            <span className={styles.highlight}>cross-functional team</span> that
+            values improving people&apos;s lives through accessible design.
+          </p>
+        </motion.div>
+
+        <div className={styles.experienceGrid}>
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              className={styles.experienceCard}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+            >
+              <div className={styles.cardHeader}>
+                <div className={styles.companyIcon}>
+                  <span>{exp.company.charAt(0)}</span>
+                </div>
+                <div className={styles.cardInfo}>
+                  <h3 className={styles.role}>{exp.role}</h3>
+                  <h4 className={styles.company}>{exp.company}</h4>
+                  <div className={styles.meta}>
+                    <span className={styles.duration}>{exp.duration}</span>
+                    <span className={styles.location}>{exp.location}</span>
+                    <span className={styles.type}>{exp.type}</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className={styles.description}>{exp.description}</p>
+
+              <div className={styles.achievements}>
+                {exp.achievements.map((achievement, i) => (
+                  <div key={i} className={styles.achievement}>
+                    <span className={styles.bullet}>•</span>
+                    {achievement}
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.technologies}>
+                {exp.technologies.map((tech, i) => (
+                  <span key={i} className={styles.techBadge}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
