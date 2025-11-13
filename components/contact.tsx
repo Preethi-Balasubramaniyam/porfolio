@@ -67,7 +67,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       label: "Location",
-      value: "Coimbatore, India",
+      value: "Bengaluru, Karnataka | Native: Erode, TN",
       link: null
     }
   ];

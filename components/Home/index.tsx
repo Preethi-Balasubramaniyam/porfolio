@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import Image1 from '../../assets/profile_img.png';
+import Image1 from '../../assets/ai-profile-1.png';
 import styles from '../../styles/HeroSection.module.css';
 
 export default function HeroSection() {
@@ -82,7 +82,7 @@ export default function HeroSection() {
           </div>
 
           <motion.a
-            href="/assets/Preethi.pdf"
+            href="/Preethi.pdf"
             download="Preethi_Balasubramaniyam_Resume.pdf"
             className={styles.resumeButton}
             whileHover={{ scale: 1.05 }}

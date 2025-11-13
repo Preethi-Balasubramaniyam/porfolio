@@ -23,10 +23,10 @@ export default function Home() {
     <div>
     <HeroSection/>
     <About/>
-    <Experience/>
-<Tools/>
-    <Education/>
     <Projects/>
+    <Experience/>
+    <Tools/>
+    <Education/>
     <Contact/>
     </div>
        
