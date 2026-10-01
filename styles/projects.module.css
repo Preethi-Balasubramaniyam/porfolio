@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
-  background: var(--bg-primary);
+  background: transparent;
   background-image: var(--bg-gradient);
 }
 
@@ -68,7 +68,7 @@
 
 .featuredCard:hover {
   border-color: var(--accent-purple);
-  box-shadow: 0 25px 50px rgba(120, 119, 198, 0.2);
+  box-shadow: 0 25px 50px rgba(232, 184, 74, 0.2);
 }
 
 .featuredCard:nth-child(even) {
@@ -85,7 +85,7 @@
 
 .projectImage {
   position: relative;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   overflow: hidden;
@@ -116,7 +116,7 @@
 
 .statusBadge {
   padding: 0.375rem 0.875rem;
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   border: 1px solid var(--accent-purple);
   border-radius: 20px;
   font-size: 0.75rem;
@@ -179,7 +179,7 @@
 
 .techBadge {
   padding: 0.375rem 0.875rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 8px;
   font-size: 0.8rem;
@@ -189,7 +189,7 @@
 }
 
 .techBadge:hover {
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   color: var(--text-primary);
 }
 
@@ -206,7 +206,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   text-decoration: none;
@@ -215,18 +215,19 @@
 
 .projectLink:hover {
   color: var(--text-primary);
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   transform: translateY(-2px);
 }
 
 .primaryLink {
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-  color: var(--text-primary);
+  color: var(--ink);
   border-color: transparent;
 }
 
 .primaryLink:hover {
-  box-shadow: 0 8px 25px rgba(120, 119, 198, 0.3);
+  color: var(--ink);
+  box-shadow: 0 8px 25px rgba(232, 184, 74, 0.3);
 }
 
 .otherProjectsSection {
@@ -258,7 +259,7 @@
 
 .projectCard:hover {
   border-color: var(--accent-purple);
-  box-shadow: 0 15px 30px rgba(120, 119, 198, 0.15);
+  box-shadow: 0 15px 30px rgba(232, 184, 74, 0.15);
 }
 
 .cardHeader {
@@ -280,7 +281,7 @@
   width: 36px;
   height: 36px;
   color: var(--text-secondary);
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 8px;
   text-decoration: none;
@@ -289,7 +290,7 @@
 
 .iconLink:hover {
   color: var(--text-primary);
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   transform: translateY(-2px);
 }
 
@@ -316,7 +317,7 @@
 
 .cardTech {
   padding: 0.25rem 0.625rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 6px;
   font-size: 0.75rem;
@@ -397,7 +398,7 @@
 }
 
 .carouselBtn:hover {
-  background: rgba(120, 119, 198, 0.8);
+  background: rgba(232, 184, 74, 0.8);
   border-color: var(--accent-purple);
   transform: translateY(-50%) scale(1.1);
 }
@@ -435,4 +436,254 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.caseStudy {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.caseHeader {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.screenshotNote {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: rgba(232, 184, 74, 0.08);
+}
+
+.gallery {
+  margin-bottom: 1.5rem;
+}
+
+.proofRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.proofCard {
+  padding: 1rem 1.05rem;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: rgba(8, 10, 22, 0.72);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.proofCard h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.proofCard p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stage {
+  perspective: 1600px;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.laptop {
+  transform: none;
+  transition: transform 0.35s ease;
+}
+
+.stage:hover .laptop {
+  transform: translateY(-6px);
+}
+
+.bezel {
+  background: #1a1e27;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px 18px 12px 12px;
+  padding: 14px 14px 18px;
+  box-shadow:
+    0 40px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(232, 184, 74, 0.25);
+}
+
+.laptopBase {
+  height: 16px;
+  margin: 0 10%;
+  background: linear-gradient(#2c3144, #12141c);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
+}
+
+.galleryFrame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: #070b16;
+  aspect-ratio: 1024 / 640;
+}
+
+.galleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75rem 0 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.captionCount {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.thumbs {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.9rem 0 0.25rem;
+}
+
+.thumb {
+  flex: 0 0 132px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.thumbActive {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.sectionCard {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: rgba(232, 184, 74, 0.06);
+}
+
+.sectionCard h3,
+.stackBlock h3,
+.limits h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.sectionCard p,
+.fit,
+.limits li {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.stackBlock,
+.limits {
+  margin-top: 1.5rem;
+}
+
+.stackTable {
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.stackRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.stackRow:first-child {
+  border-top: none;
+}
+
+.stackRow span:first-child {
+  color: var(--accent-purple);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stackRow span:last-child {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.limits ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.limits li {
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .caseHeader,
+  .sectionGrid,
+  .stackRow,
+  .proofRow {
+    grid-template-columns: 1fr;
+  }
+
+  .laptop {
+    transform: none;
+  }
+
+  .caseStudy {
+    padding: 1.5rem;
+  }
 }

@@ -33,7 +33,7 @@ export default function Tools() {
       {/* Header Section */}
       <div className={styles.header}>
         <p className={styles.subtitle}>
-          Looking to contribute to a <span className={styles.highlight}>cross-functional</span> team that prioritizes accessibility and designs solutions that positively impact people&apos;s lives.
+          The tools behind the products above: <span className={styles.highlight}>Flutter and Next.js</span> on the client, Node and a SQL database on the API.
         </p>
       </div>
 

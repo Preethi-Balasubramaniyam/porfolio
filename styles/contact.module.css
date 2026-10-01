@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
-  background: var(--bg-primary);
+  background: transparent;
   background-image: var(--bg-gradient);
 }
 
@@ -72,14 +72,14 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(120, 119, 198, 0.05);
+  background: rgba(232, 184, 74, 0.05);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   transition: all 0.3s ease;
 }
 
 .contactItem:hover {
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border-color: var(--accent-purple);
   transform: translateX(8px);
 }
@@ -173,7 +173,7 @@
 .textarea {
   width: 100%;
   padding: 1rem 1.25rem;
-  background: rgba(120, 119, 198, 0.05);
+  background: rgba(232, 184, 74, 0.05);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   font-size: 1rem;
@@ -191,8 +191,8 @@
 .input:focus,
 .textarea:focus {
   border-color: var(--accent-purple);
-  background: rgba(120, 119, 198, 0.1);
-  box-shadow: 0 0 0 3px rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
+  box-shadow: 0 0 0 3px rgba(232, 184, 74, 0.1);
 }
 
 .textarea {
@@ -209,7 +209,7 @@
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--ink);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -219,7 +219,7 @@
 }
 
 .submitButton:hover:not(:disabled) {
-  box-shadow: 0 12px 35px rgba(120, 119, 198, 0.4);
+  box-shadow: 0 12px 35px rgba(232, 184, 74, 0.4);
   transform: translateY(-2px);
 }
 

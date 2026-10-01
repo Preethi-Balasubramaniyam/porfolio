@@ -2,7 +2,7 @@
 .container {
     min-height: 100vh;
     padding: 4rem 2rem;
-    background: var(--bg-primary);
+    background: transparent;
     background-image: var(--bg-gradient);
     color: #ffffff;
     position: relative;
@@ -25,7 +25,7 @@
 }
 
 .highlight {
-    color: #7c3aed;
+    color: #e8b84a;
     font-weight: 600;
 }
 
@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 1100px;
 }
 
 /* Central Hub */
@@ -51,22 +52,20 @@
 .hubContent {
     width: 120px;
     height: 120px;
-    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    background: linear-gradient(135deg, #e8b84a 0%, #f3e7c3 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:
-        0 0 50px rgba(124, 58, 237, 0.5),
-        0 0 100px rgba(6, 182, 212, 0.3);
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(232, 184, 74, 0.28);
+    border: 3px solid rgba(246, 243, 236, 0.2);
 }
 
 .hubIcon {
     font-size: 3rem;
     font-weight: bold;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    color: #16130c;
+    text-shadow: none;
 }
 
 /* Tech Orbit */
@@ -74,6 +73,19 @@
     position: relative;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
+    animation: orbitTilt 14s ease-in-out infinite;
+}
+
+@keyframes orbitTilt {
+    0%, 100% { transform: rotateX(10deg) rotateZ(-4deg); }
+    50% { transform: rotateX(14deg) rotateZ(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .techOrbit {
+        animation: none;
+    }
 }
 
 /* Tech Icons */

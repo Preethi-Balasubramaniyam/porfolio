@@ -6,59 +6,118 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: "FullStack Developer",
+      role: "Full-Stack Developer",
+      company: "Edgezen Labs",
+      location: "Coimbatore",
+      duration: "Sept 2025 – Present",
+      type: "Full-time",
+      description:
+        "Current role. Briktra is a multi-tenant construction client for Android, iOS, and web. I own the Flutter app: routing, session, roles, and plan limits.",
+      technologies: [
+        "Flutter",
+        "Provider",
+        "REST API",
+        "JWT",
+        "Firebase FCM",
+        "GPS",
+        "Cashfree",
+        "easy_localization",
+      ],
+      achievements: [
+        "One Provider per domain, and named routes so a notification opens a screen that already exists.",
+        "JWT kept in flutter_secure_storage. Login is password, OTP, or biometric, and the session drops when the token expires.",
+        "Five roles and the subscription plan decide which routes and create actions render.",
+        "Attendance stores a GPS point, with a timeout fallback, and compares it to the site using Haversine. Files open through signed URLs.",
+        "Cashfree updates plan state after checkout. Layout is a navigation rail from 900px and a single column on a phone. Copy is in localization files.",
+      ],
+    },
+    {
+      id: 2,
+      role: "Full-Stack Developer",
       company: "Yarkria Tech",
       location: "Coimbatore",
       duration: "Feb 2025 – April 2025",
       type: "Freelance",
       description:
-        "Developed cross-platform mobile apps using Flutter with modern UI/UX and optimized performance on Android & iOS.",
+        "Cleomitra, a salon CRM. I delivered both sides: the Flutter app and the TypeScript API for branches, customers, invoices, and chat.",
       technologies: [
         "Flutter",
         "Node.js",
-        "Express.js",
-        "MySQL",
+        "Express",
         "TypeScript",
-        "REST API",
-        "Git",
-        "Agile",
-        "Testing",
-        "JIRA",
+        "Sequelize",
+        "MySQL",
+        "Socket.IO",
+        "AWS S3",
+        "JWT",
+      ],
+      links: [
+        { label: "Flutter client", href: "https://github.com/Preethi-Balasubramaniyam/Beautysalon_CRM_Enduser" },
+        { label: "API", href: "https://github.com/Preethi-Balasubramaniyam/Beautysalon_Server" },
       ],
       achievements: [
-        "Developed cross-platform mobile apps using Flutter with modern UI/UX and optimized performance on Android & iOS.",
-        "Built scalable backend services with Node.js, Express.js, and MySQL, including authentication and data management.",
-        "Designed and implemented RESTful APIs for seamless integration with frontend and mobile clients.",
-        "Used TypeScript for frontend and backend to enhance code quality, maintainability, and reduce errors.",
-        "Collaborated in Agile teams, contributing to prototyping, code reviews, testing, and sprint ceremonies.",
+        "Flutter client for Android, iOS, and web. Session is a JWT in secure storage, with OTP and Facebook OAuth.",
+        "Express API in TypeScript. Sequelize models and migrations, with routes scoped to the organization.",
+        "Live chat on Socket.IO. Media goes to S3 through presigned URLs.",
+        "Token middleware, bcrypt, Helmet, and rate limits on the API. Jest and Supertest cover the request paths.",
+        "Deployed with CodeBuild and Elastic Beanstalk. API logs go through Winston.",
       ],
     },
     {
-      id: 2,
-      role: "FullStack Developer",
+      id: 3,
+      role: "Full-Stack Developer",
       company: "Akkenna Animation and Technologies",
       location: "Coimbatore",
       duration: "Sept 2023 – Dec 2024",
       type: "Full-time",
       description:
-        "Developed scalable and responsive web applications using React.js, Next.js, and Redux Toolkit, ensuring cross-device compatibility.",
+        "Engage Athlete connects athletes, coaches, and academies. I built the Next.js product and the React admin beside it.",
       technologies: [
-        "React.js",
         "Next.js",
+        "React",
+        "TypeScript",
         "Redux Toolkit",
-        "JavaScript (ES6+)",
-        "REST API",
-        "Chrome DevTools",
-        "Git",
-        "Agile",
-        "Figma",
+        "NextAuth",
+        "Stripe",
+        "Socket.IO",
+        "Formik",
+      ],
+      links: [
+        { label: "Product", href: "https://github.com/Preethi-Balasubramaniyam/connect-athlete-Enduser" },
+        { label: "Admin", href: "https://github.com/Preethi-Balasubramaniyam/connect-athlete-admin" },
       ],
       achievements: [
-        "Developed scalable and responsive web applications using React.js, Next.js, and Redux Toolkit with cross-device compatibility.",
-        "Implemented global state management and optimized rendering performance to enhance speed and user experience.",
-        "Collaborated with UI/UX designers to convert Figma designs into functional, visually consistent components.",
-        "Integrated RESTful APIs and ensured smooth data flow between frontend and backend services.",
-        "Improved page load time by 25% through code splitting, lazy loading, and other performance best practices, following Agile cycles and software engineering best practices.",
+        "Separate Next.js areas for athlete, coach, and academy, plus a React admin for operations.",
+        "NextAuth holds the session. A role hook sends the user away when roleId is not allowed on that route.",
+        "Auth and profile state live in Redux Toolkit. Forms use Formik and Yup.",
+        "Checkout and subscriptions go through Stripe and Square. Messages use a Socket.IO client.",
+        "Admin charts use Chart.js and FullCalendar. Jest covers the panel.",
+      ],
+    },
+    {
+      id: 4,
+      role: "Full-Stack Developer",
+      company: "Freelance",
+      location: "Remote",
+      duration: "Client work",
+      type: "Contract",
+      description:
+        "Earlier public work: Gudata, a logistics site, and TidyDay, a course app with its own API.",
+      technologies: [
+        "React.js",
+        "Bootstrap",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "JWT",
+      ],
+      links: [
+        { label: "Gudata", href: "https://github.com/Preethi-Balasubramaniyam/Datalogic_frontend" },
+        { label: "TidyDay", href: "https://github.com/Preethi-Balasubramaniyam/Tidyday" },
+      ],
+      achievements: [
+        "Gudata is React and Bootstrap, with semantic markup and meta tags across the service pages.",
+        "TidyDay is a React client, an Express API, and MySQL. JWT guards private routes. Enrollment changes after the server accepts payment.",
       ],
     },
   ];
@@ -74,21 +133,18 @@ const Experience = () => {
         >
           <h1 className={styles.heading}>Work Experience</h1>
           <p className={styles.subheading}>
-            I&apos;m currently looking to join a{" "}
-            <span className={styles.highlight}>cross-functional team</span> that
-            values improving people&apos;s lives through accessible design.
+            Three product roles, then earlier client work. Each card is the engineering I owned, with public repos where I can share them.
           </p>
         </motion.div>
 
         <div className={styles.experienceGrid}>
           {experiences.map((exp, index) => (
+            <div key={exp.id} data-depth>
             <motion.div
-              key={exp.id}
               className={styles.experienceCard}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.companyIcon}>
@@ -123,7 +179,18 @@ const Experience = () => {
                   </span>
                 ))}
               </div>
+
+              {"links" in exp && exp.links && (
+                <div className={styles.repoLinks}>
+                  {exp.links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </motion.div>
+            </div>
           ))}
         </div>
       </div>

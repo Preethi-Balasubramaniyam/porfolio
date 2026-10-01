@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  background: rgba(15, 10, 30, 0.95);
+  padding: 0.85rem 2rem;
+  background: rgba(12, 14, 18, 0.9);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(120, 119, 198, 0.1);
+  border-bottom: 1px solid rgba(232, 184, 74, 0.1);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,27 +17,28 @@
 .headerLeft {
   display: flex;
   align-items: center;
+  perspective: 600px;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--accent-purple);
+  color: var(--ink);
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  background: rgba(120, 119, 198, 0.1);
-  border: 1px solid rgba(120, 119, 198, 0.2);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--accent-purple);
+  border: none;
   transition: all 0.3s ease;
 }
 
 .logo:hover {
-  background: rgba(120, 119, 198, 0.2);
-  box-shadow: 0 0 20px rgba(120, 119, 198, 0.3);
+  background: #f3d78a;
+  box-shadow: 0 12px 30px rgba(232, 184, 74, 0.35);
   transform: translateY(-2px);
 }
 
@@ -88,12 +89,12 @@
 }
 
 .navToggle:hover {
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
 }
 
 .navToggle:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(120, 119, 198, 0.3);
+  box-shadow: 0 0 0 2px rgba(232, 184, 74, 0.3);
 }
 
 /* Mobile responsive */

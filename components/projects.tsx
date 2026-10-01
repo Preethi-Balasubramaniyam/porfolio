@@ -1,52 +1,90 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "../styles/projects.module.css";
 
-const projects = [
+const workflowShots = [
+  { src: "/projects/workflow/01-landing.png", label: "Landing" },
+  { src: "/projects/workflow/02-login.png", label: "Sign in" },
+  { src: "/projects/workflow/03-dashboard.png", label: "Dashboard" },
+  { src: "/projects/workflow/04-projects.png", label: "Projects" },
+  { src: "/projects/workflow/05-project.png", label: "Project and tasks" },
+  { src: "/projects/workflow/06-documents.png", label: "Documents" },
+  { src: "/projects/workflow/07-analytics.png", label: "Analytics" },
+  { src: "/projects/workflow/08-team.png", label: "Team" },
+  { src: "/projects/workflow/09-activity.png", label: "Activity" },
+  { src: "/projects/workflow/10-ai-assistant.png", label: "AI assistant" },
+];
+
+const workflowStack = [
+  { layer: "Web", choice: "Next.js, React, TypeScript, Tailwind CSS" },
+  { layer: "API", choice: "Express, Zod, JWT in an HTTP-only cookie" },
+  { layer: "Data", choice: "PostgreSQL, Prisma, pgvector for document embeddings" },
+  { layer: "Realtime", choice: "Socket.IO, authorized per organization and project room" },
+  { layer: "Files", choice: "Private Supabase Storage bucket" },
+  { layer: "AI", choice: "Gemini through one provider interface, with a mock used in tests" },
+];
+
+const workflowSections = [
   {
-    id: 1,
-    title: "Gudata Logistics Website",
-    category: "Freelance Project", 
-    description: "Designed and developed a responsive company website with a focus on SEO optimization and intuitive navigation. A static website showcasing logistics services with modern UI/UX design.",
-    image: "/projects/gudata.png",
-    images: ["/projects/gudata.png", "/projects/gudata2.png", "/projects/gudata3.png", "/projects/gudata4.png"],
-    tech: ["React.js", "Bootstrap", "SEO", "Responsive Design"],
-    link: "https://github.com/Preethi-Balasubramaniyam/Datalogic_frontend",
-    liveDemo: "#",
-    featured: true,
-    status: "Completed"
+    title: "One organization",
+    body: "Each workspace is a single company. Sign-in uses an HTTP-only cookie. Owners, admins, and managers see the organization’s projects. Employees see only the projects they were added to.",
   },
   {
-    id: 2,
-    title: "AI Blog Writing Platform",
-    category: "Full Stack Project", 
-    description: "A comprehensive AI-powered blog writing platform with intelligent content generation. Features include Next.js frontend for seamless user experience, Node.js backend for robust API handling, and MongoDB for efficient data management.",
-    image: "/projects/aiblog.png",
-    images: ["/projects/aiblog.png", "/projects/aiblog2.png", "/projects/aiblog3.png", "/projects/aiblog4.png"],
-    tech: ["Next.js", "Node.js", "MongoDB", "Express.js", "RESTful APIs", "AI Integration"],
-    link: "https://github.com/Preethi-Balasubramaniyam/AI-Blog-Platform",
-    liveDemo: "#",
-    featured: true,
-    status: "Completed"
+    title: "Tasks",
+    body: "Work moves through to do, in progress, in review, blocked, and completed. Each task has an assignee, a due date, and comments. Suggested tasks from a written objective stay unpublished until someone creates them.",
   },
   {
-    id: 3,
-    title: "TidyDay Online Learning Platform",
-    category: "Full Stack Project", 
-    description: "An interactive online course providing platform that enables educators to create, manage, and deliver engaging educational content. Features include course management, student enrollment, progress tracking, and secure payment integration.",
-    image: "/projects/tidyday.png",
-    images: ["/projects/tidyday.png", "/projects/tidyday2.png", "/projects/tidyday3.png", "/projects/tidyday4.png", "/projects/tidyday5.png", "/projects/tidyday6.png"],
-    tech: ["Node.js", "Express.js", "MySQL", "JWT", "React.js", "Bootstrap"],
-    link: "https://github.com/Preethi-Balasubramaniyam/Tidyday",
-    liveDemo: "#",
-    featured: true,
-    status: "Completed"
+    title: "Private files",
+    body: "Uploads are PDF, Office, CSV, text, and common images, up to 25 MB. Text can be summarized and cited. There is no OCR, and nothing is indexed until someone asks.",
+  },
+  {
+    title: "Health from data",
+    body: "The API computes totals, completion, overdue and due-soon counts, charts, a 14-day trend, and the reason for the health label. A risk reading is a separate request. It does not run because the page opened.",
+  },
+  {
+    title: "Team record",
+    body: "Members and roles live on one list. The activity feed stores project, task, comment, and membership events for that organization only.",
+  },
+  {
+    title: "Assistant",
+    body: "Questions such as what is at risk, what is overdue, and who has the highest workload are answered from metrics the caller is allowed to see. The screen says the reply is an interpretation of those metrics.",
   },
 ];
 
-const ProjectImageCarousel = ({ images, title }: { images: string[], title: string }) => {
+const workflowProofs = [
+  { title: "Access", text: "HTTP-only JWT. Employees only see projects they belong to." },
+  { title: "Realtime", text: "Socket.IO rooms authorized per organization and project." },
+  { title: "Documents", text: "Private storage. Text is indexed only when someone asks." },
+  { title: "AI", text: "The model receives metrics the API already computed." },
+];
+
+const workflowLimits = [
+  "No scanned-PDF OCR.",
+  "No chat history and no multi-document assistant.",
+  "Documents are indexed only when someone asks.",
+  "The free hosted API can sleep, and the public web deployment is not the source of these screenshots.",
+  "Demo sign-in shown here is the local Acme seed. It is not a production account.",
+];
+
+const aiBlog = {
+  title: "AI Blog Writing Platform",
+  category: "Full Stack Project",
+  description:
+    "Next.js editor in front of an Express API and MongoDB. Generation stays behind one server boundary and returns structured content the editor renders.",
+  images: [
+    "/projects/aiblog.png",
+    "/projects/aiblog2.png",
+    "/projects/aiblog3.png",
+    "/projects/aiblog4.png",
+  ],
+  tech: ["Next.js", "Node.js", "MongoDB", "Express.js", "RESTful APIs", "AI Integration"],
+  link: "https://github.com/Preethi-Balasubramaniyam/AI-Blog-Platform",
+  status: "Completed",
+};
+
+const ProjectImageCarousel = ({ images, title }: { images: string[]; title: string }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
@@ -65,13 +103,13 @@ const ProjectImageCarousel = ({ images, title }: { images: string[], title: stri
   if (!mounted) {
     return (
       <div className={styles.carouselContainer}>
-        <Image 
-          src={images[0]} 
+        <Image
+          src={images[0]}
           alt={title}
           width={600}
           height={400}
           className={styles.projectImg}
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: "cover" }}
           priority
         />
       </div>
@@ -80,28 +118,28 @@ const ProjectImageCarousel = ({ images, title }: { images: string[], title: stri
 
   return (
     <div className={styles.carouselContainer}>
-      <Image 
-        src={images[currentIndex]} 
+      <Image
+        src={images[currentIndex]}
         alt={`${title} - Image ${currentIndex + 1}`}
         width={600}
         height={400}
         className={styles.projectImg}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: "cover" }}
         priority={currentIndex === 0}
       />
       {images.length > 1 && (
         <>
-          <button className={styles.carouselBtn} onClick={prevImage} style={{ left: '10px' }}>
+          <button type="button" className={styles.carouselBtn} onClick={prevImage} style={{ left: "10px" }} aria-label="Previous image">
             <FaChevronLeft />
           </button>
-          <button className={styles.carouselBtn} onClick={nextImage} style={{ right: '10px' }}>
+          <button type="button" className={styles.carouselBtn} onClick={nextImage} style={{ right: "10px" }} aria-label="Next image">
             <FaChevronRight />
           </button>
           <div className={styles.carouselDots}>
             {images.map((_, idx) => (
-              <span 
-                key={idx} 
-                className={`${styles.dot} ${idx === currentIndex ? styles.activeDot : ''}`}
+              <span
+                key={idx}
+                className={`${styles.dot} ${idx === currentIndex ? styles.activeDot : ""}`}
                 onClick={() => setCurrentIndex(idx)}
               />
             ))}
@@ -112,11 +150,69 @@ const ProjectImageCarousel = ({ images, title }: { images: string[], title: stri
   );
 };
 
+const WorkflowGallery = () => {
+  const [index, setIndex] = useState(0);
+  const shot = workflowShots[index];
+
+  const show = (next: number) => {
+    const count = workflowShots.length;
+    setIndex((next + count) % count);
+  };
+
+  return (
+    <div className={styles.gallery}>
+      <div className={styles.stage}>
+        <div className={styles.laptop}>
+          <div className={styles.bezel}>
+      <div className={styles.galleryFrame}>
+        <Image
+          src={shot.src}
+          alt={`WorkFlow AI — ${shot.label}`}
+          width={1024}
+          height={640}
+          className={styles.galleryImg}
+          priority={index === 0}
+        />
+        <button type="button" className={styles.carouselBtn} onClick={() => show(index - 1)} style={{ left: "12px" }} aria-label="Previous screenshot">
+          <FaChevronLeft />
+        </button>
+        <button type="button" className={styles.carouselBtn} onClick={() => show(index + 1)} style={{ right: "12px" }} aria-label="Next screenshot">
+          <FaChevronRight />
+        </button>
+      </div>
+          </div>
+          <div className={styles.laptopBase} />
+        </div>
+      </div>
+      <p className={styles.caption}>
+        <span>{shot.label}</span>
+        <span className={styles.captionCount}>
+          {index + 1} / {workflowShots.length}
+        </span>
+      </p>
+      <div className={styles.thumbs}>
+        {workflowShots.map((item, i) => (
+          <button
+            type="button"
+            key={item.src}
+            className={`${styles.thumb} ${i === index ? styles.thumbActive : ""}`}
+            onClick={() => setIndex(i)}
+            aria-label={item.label}
+          >
+            <Image src={item.src} alt="" width={160} height={100} className={styles.thumbImg} />
+            <span>{item.label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <motion.div 
+        <motion.div
           className={styles.header}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,73 +220,125 @@ const Projects = () => {
         >
           <h1 className={styles.heading}>Featured Projects</h1>
           <p className={styles.subheading}>
-            A collection of projects that showcase my skills in full-stack development, 
-            AI integration, and responsive web design.
+            Two builds I can show: WorkFlow AI, a workspace where AI only reads metrics the API already computed, and an AI blog platform with a single generation API.
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
+        <motion.article
+          className={styles.caseStudy}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className={styles.caseHeader}>
+            <div>
+              <span className={styles.category}>Full Stack Project</span>
+              <h2 className={styles.projectTitle}>WorkFlow AI</h2>
+              <p className={styles.projectDescription}>
+                A workspace for one company: projects, tasks, private files, and an assistant that explains numbers the server already calculated.
+              </p>
+            </div>
+            <p className={styles.screenshotNote}>
+              Captured locally while signed in as the owner of the Acme Technologies demo. The numbers on screen come from task data, not from the model.
+            </p>
+          </div>
+
+          <div className={styles.proofRow}>
+            {workflowProofs.map((item) => (
+              <div key={item.title} className={styles.proofCard} data-depth>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <WorkflowGallery />
+
+          <div className={styles.techStack}>
+            {["Next.js", "Express", "PostgreSQL", "Prisma", "Socket.IO", "Supabase", "Gemini"].map((tech) => (
+              <span key={tech} className={styles.techBadge}>{tech}</span>
+            ))}
+          </div>
+
+          <div className={styles.sectionGrid}>
+            {workflowSections.map((section) => (
+              <div key={section.title} className={styles.sectionCard} data-depth>
+                <h3>{section.title}</h3>
+                <p>{section.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.stackBlock}>
+            <h3>Stack</h3>
+            <div className={styles.stackTable}>
+              {workflowStack.map((row) => (
+                <div key={row.layer} className={styles.stackRow}>
+                  <span>{row.layer}</span>
+                  <span>{row.choice}</span>
+                </div>
+              ))}
+            </div>
+            <p className={styles.fit}>
+              The browser uses REST and a websocket. Prisma is the only database client. File bytes stay in private storage. Search uses pgvector when it is available, and a capped JSON similarity path when it is not. Production refuses a mock AI provider and mock storage, so a missing key cannot look like a real answer.
+            </p>
+          </div>
+
+          <div className={styles.limits}>
+            <h3>Limits</h3>
+            <ul>
+              {workflowLimits.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </motion.article>
+
         <div className={styles.featuredSection}>
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className={styles.featuredCard}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -8 }}
-            >
-              <div className={styles.projectImage}>
-                <ProjectImageCarousel images={project.images || [project.image]} title={project.title} />
-                <div className={styles.projectStatus}>
-                  <span className={styles.statusBadge}>{project.status}</span>
-                </div>
+          <div data-depth>
+          <motion.div
+            className={styles.featuredCard}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <div className={styles.projectImage}>
+              <ProjectImageCarousel images={aiBlog.images} title={aiBlog.title} />
+              <div className={styles.projectStatus}>
+                <span className={styles.statusBadge}>{aiBlog.status}</span>
               </div>
-              
-              <div className={styles.projectContent}>
-                <div className={styles.projectMeta}>
-                  <span className={styles.category}>{project.category}</span>
-                  <div className={styles.projectRating}>
-                    <FaStar className={styles.star} />
-                    <FaStar className={styles.star} />
-                  </div>
-                </div>
-                
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDescription}>{project.description}</p>
-                
-                <div className={styles.techStack}>
-                  {project.tech.slice(0, 4).map((tech, i) => (
-                    <span key={i} className={styles.techBadge}>{tech}</span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className={styles.techBadge}>+{project.tech.length - 4}</span>
-                  )}
-                </div>
-                
-                <div className={styles.projectLinks}>
-                  <a
-                    href={project.link}
-                    className={styles.projectLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub /> View Code
-                  </a>
-                  {project.liveDemo && (
-                    <a
-                      href={project.liveDemo}
-                      className={`${styles.projectLink} ${styles.primaryLink}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaExternalLinkAlt /> Live Demo
-                    </a>
-                  )}
-                </div>
+            </div>
+
+            <div className={styles.projectContent}>
+              <div className={styles.projectMeta}>
+                <span className={styles.category}>{aiBlog.category}</span>
               </div>
-            </motion.div>
-          ))}
+
+              <h3 className={styles.projectTitle}>{aiBlog.title}</h3>
+              <p className={styles.projectDescription}>{aiBlog.description}</p>
+
+              <div className={styles.techStack}>
+                {aiBlog.tech.slice(0, 4).map((tech) => (
+                  <span key={tech} className={styles.techBadge}>{tech}</span>
+                ))}
+                {aiBlog.tech.length > 4 && (
+                  <span className={styles.techBadge}>+{aiBlog.tech.length - 4}</span>
+                )}
+              </div>
+
+              <div className={styles.projectLinks}>
+                <a
+                  href={aiBlog.link}
+                  className={`${styles.projectLink} ${styles.primaryLink}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub /> View Code
+                </a>
+              </div>
+            </div>
+          </motion.div>
+          </div>
         </div>
       </div>
     </section>

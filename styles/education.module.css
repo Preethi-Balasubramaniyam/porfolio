@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
-  background: var(--bg-primary);
+  background: transparent;
   background-image: var(--bg-gradient);
 }
 
@@ -51,6 +51,42 @@
   z-index: 0;
 }
 
+.slot {
+  width: calc(50% - 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.slotLeft {
+  align-self: flex-start;
+}
+
+.slotRight {
+  align-self: flex-end;
+}
+
+.slot::after {
+  content: '';
+  position: absolute;
+  top: 2.2rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  border: 3px solid #0c0e12;
+  z-index: 2;
+}
+
+.slotLeft::after {
+  right: -40px;
+  transform: translateX(50%);
+}
+
+.slotRight::after {
+  left: -40px;
+  transform: translateX(-50%);
+}
+
 .educationCard {
   background: var(--card-bg);
   backdrop-filter: blur(20px);
@@ -59,18 +95,8 @@
   padding: 2rem;
   position: relative;
   transition: all 0.3s ease;
-  max-width: 500px;
+  width: 100%;
   z-index: 1;
-}
-
-.educationCard:nth-child(odd) {
-  align-self: flex-start;
-  margin-right: auto;
-}
-
-.educationCard:nth-child(even) {
-  align-self: flex-end;
-  margin-left: auto;
 }
 
 .educationCard::before {
@@ -91,7 +117,7 @@
 
 .educationCard:hover {
   border-color: var(--accent-purple);
-  box-shadow: 0 20px 40px rgba(120, 119, 198, 0.2);
+  box-shadow: 0 20px 40px rgba(232, 184, 74, 0.2);
 }
 
 .cardHeader {
@@ -165,7 +191,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 12px;
 }
@@ -189,7 +215,7 @@
 .progressBar {
   width: 100%;
   height: 6px;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -227,7 +253,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   font-size: 0.9rem;
@@ -236,7 +262,7 @@
 }
 
 .achievement:hover {
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   color: var(--text-primary);
   transform: translateY(-2px);
 }
@@ -257,20 +283,23 @@
   }
   
   .educationTimeline::before {
-    left: 2rem;
+    left: 22px;
+    transform: none;
   }
-  
-  .educationCard {
-    max-width: none;
-    margin-left: 1rem !important;
-    margin-right: 0 !important;
-  }
-  
-  .educationCard:nth-child(odd),
-  .educationCard:nth-child(even) {
+
+  .slot,
+  .slotLeft,
+  .slotRight {
+    width: auto;
     align-self: stretch;
-    margin-left: 1rem;
-    margin-right: 0;
+    margin-left: 48px;
+  }
+
+  .slotLeft::after,
+  .slotRight::after {
+    left: -26px;
+    right: auto;
+    transform: translateX(-50%);
   }
   
   .cardHeader {

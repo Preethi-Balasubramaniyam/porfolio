@@ -13,44 +13,43 @@ export default function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className={styles.profileCard}>
+          <div className={styles.profileCard} data-depth>
+            <span className={styles.profileRing} aria-hidden="true" />
             <motion.img 
               src={Image1.src}  
-              alt="Preethi Avatar" 
+              alt="Preethi Balasubramaniyam" 
               className={styles.avatar} 
-              whileHover={{ scale: 1.05, rotate: 3 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.04, rotateY: 8 }}
+              transition={{ type: "spring", stiffness: 260 }}
             />
             <div className={styles.profileInfo}>
               <p className={styles.greeting}>
                 Hello / I&apos;m <span className={styles.nameAccent}>Preethi Balasubramaniyam</span>
               </p>
-              <h1 className={styles.title}>A Developer who</h1>
+              <h1 className={styles.title}>Full-stack developer</h1>
               <h2 className={styles.subtitle}>
-                Designs experiences <br />
-                that users <span className={styles.coverHighlight}>remember</span>...
+                I ship <span className={styles.coverHighlight}>mobile and web</span> products
               </h2>
               <p className={styles.tagline}>
-                Because the best products balance <strong>functionality</strong> and <strong>delight</strong>.
+                Flutter clients, Next.js apps, and Node APIs. Auth, roles, and realtime included.
               </p>
             </div>
           </div>
         </motion.div>
 
+        <div data-depth>
         <motion.div 
           className={styles.introSection}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className={styles.roleTitle}>I&apos;m a Full-Stack Developer 🚀</h3>
+          <h3 className={styles.roleTitle}>Building Briktra at Edgezen Labs</h3>
           <p className={styles.currentRole}>
-            With 1.5+ years of experience in <span className={styles.companyHighlight}>React, Next.js, Node.js, and Flutter</span>
+            2+ years across <span className={styles.companyHighlight}>Flutter, Next.js, and Node.js</span>
           </p>
           <p className={styles.description}>
-            A self-taught Full-Stack Developer — I craft scalable web & mobile apps 
-            with clean architecture and intuitive user interfaces. My goal is to build products 
-            that are not only technically strong but also meaningful to the people who use them.
+            Recent work includes a construction workspace, a salon CRM with its own API, and an athlete–coach–academy platform. I care about role checks, private data, and APIs a client can trust.
           </p>
 
           <div className={styles.socialLinks}>
@@ -91,6 +90,7 @@ export default function HeroSection() {
             Download Resume
           </motion.a>
         </motion.div>
+        </div>
       </div>
 
       {/* Decorative elements */}

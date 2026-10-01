@@ -25,15 +25,15 @@ const About = () => {
         "Node.js",
         "Express.js",
         "REST API",
-        "JSON",
-        "SOAP",
-        "XML",
+        "JWT",
+        "Socket.IO",
+        "Zod",
       ],
     },
     {
       category: "Databases",
       icon: "💾",
-      technologies: ["MongoDB (NoSQL)", "MySQL Server"],
+      technologies: ["PostgreSQL", "MySQL", "MongoDB", "Prisma", "Sequelize"],
     },
     {
       category: "Tools & DevOps",
@@ -41,9 +41,9 @@ const About = () => {
       technologies: [
         "Git",
         "GitHub",
-        "CI/CD",
-        "AWS (EC2, S3, Lambda)",
-        "Copilot",
+        "AWS S3",
+        "CodeBuild",
+        "Elastic Beanstalk",
       ],
     },
     {
@@ -79,11 +79,8 @@ const About = () => {
         >
           <h1 className={styles.heading}>About Me</h1>
           <p className={styles.subheading}>
-            I&apos;m a <strong>Full-Stack Developer</strong> with 1.5+ years of
-            experience, passionate about building scalable web and mobile
-            applications. With a background in <strong>UI/UX design</strong>, I
-            bring a unique ability to create products that are both technically
-            strong and visually engaging.
+            I&apos;m a <strong>full-stack developer</strong> in Coimbatore.
+            I build the client and the API for the same product: Flutter or Next.js in front, Node behind it, and access rules that match the signed-in role.
           </p>
         </motion.div>
 
@@ -93,7 +90,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className={styles.introCard}>
+          <div className={styles.introCard} data-depth>
             <div className={styles.profileSection}>
               <div className={styles.profileIcon}>
                 <span>P</span>
@@ -104,7 +101,7 @@ const About = () => {
               </div>
             </div>
             <p className={styles.description}>
-              My expertise lies in <span className={styles.highlight5}>React and Next.js</span>, where I build fast, maintainable, and user-friendly applications. I also work across the full stack when needed—optimizing APIs, improving performance, and ensuring that every product is both functional and enjoyable to use.
+              Day to day I work in <span className={styles.highlight5}>Flutter, Next.js, and TypeScript</span>. The pattern is the same on each product: a typed API, a session the browser cannot read as a script, and screens that only render what that role is allowed to see.
             </p>
           </div>
         </motion.div>
@@ -116,18 +113,17 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Technical Skills & Expertise
+            Stack I use on shipped work
           </motion.h2>
 
           <div className={styles.skillsGrid}>
             {skills.map((skill, index) => (
+              <div key={skill.category} data-depth>
               <motion.div
-                key={skill.category}
                 className={styles.skillCard}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                whileHover={{ y: -8 }}
               >
                 <div className={styles.skillHeader}>
                   <div className={styles.skillIcon}>{skill.icon}</div>
@@ -141,6 +137,7 @@ const About = () => {
                   ))}
                 </div>
               </motion.div>
+              </div>
             ))}
           </div>
         </div>

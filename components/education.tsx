@@ -11,7 +11,7 @@ const Education = () => {
       score: '84%',
       icon: '🎓',
       level: 'Bachelor\'s Degree',
-      description: 'Specialized in Information Technology with focus on software development and system design.'
+      description: 'Information Technology degree aimed at software development and how systems are structured.'
     },
     {
       degree: 'Higher Secondary School',
@@ -20,7 +20,7 @@ const Education = () => {
       score: '68.17%',
       icon: '📚',
       level: 'Higher Secondary',
-      description: 'Completed higher secondary education with focus on Computer Science and Mathematics.'
+      description: 'Higher secondary with Computer Science and Mathematics.'
     },
     {
       degree: 'SSLC',
@@ -29,7 +29,7 @@ const Education = () => {
       score: '96%',
       icon: '📖',
       level: 'Secondary School',
-      description: 'Completed secondary school education with excellent academic performance.'
+      description: 'Secondary school, finished with 96%.'
     },
   ];
 
@@ -44,19 +44,22 @@ const Education = () => {
         >
           <h1 className={styles.heading}>Education</h1>
           <p className={styles.subheading}>
-            Academic journey and qualifications that shaped my technical foundation
+            B.Tech in Information Technology, then the school results that came before it.
           </p>
         </motion.div>
 
         <div className={styles.educationTimeline}>
           {education.map((edu, index) => (
-            <motion.div
+            <div
               key={index}
+              data-depth
+              className={`${styles.slot} ${index % 2 === 0 ? styles.slotLeft : styles.slotRight}`}
+            >
+            <motion.div
               className={styles.educationCard}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -8 }}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.educationIcon}>
@@ -88,6 +91,7 @@ const Education = () => {
                 </div>
               </div>
             </motion.div>
+            </div>
           ))}
         </div>
 
@@ -101,15 +105,15 @@ const Education = () => {
           <div className={styles.achievementsList}>
             <div className={styles.achievement}>
               <div className={styles.achievementIcon}>🏆</div>
-              <span>Graduated with 84% in Information Technology</span>
+              <span>B.Tech, Information Technology — 84%</span>
             </div>
             <div className={styles.achievement}>
               <div className={styles.achievementIcon}>⭐</div>
-              <span>Excellent performance in SSLC with 96%</span>
+              <span>SSLC — 96%</span>
             </div>
             <div className={styles.achievement}>
               <div className={styles.achievementIcon}>💻</div>
-              <span>Specialized in Software Development & System Design</span>
+              <span>Coursework centered on software development and system design</span>
             </div>
           </div>
         </motion.div>

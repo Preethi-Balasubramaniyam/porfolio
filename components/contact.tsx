@@ -83,11 +83,12 @@ const Contact = () => {
         >
           <h1 className={styles.heading}>Contact</h1>
           <p className={styles.subheading}>
-            I&apos;m currently looking to join a <span className={styles.highlight}>cross-functional team</span> that values improving people&apos;s lives through accessible design. Or have a project in mind? Let&apos;s connect!
+            Open to full-stack roles and contract work. Write with the product and the stack, and I&apos;ll reply with how I&apos;d approach the <span className={styles.highlight}>client and the API</span>.
           </p>
         </motion.div>
 
         <div className={styles.contactContent}>
+          <div data-depth>
           <motion.div 
             className={styles.contactInfo}
             initial={{ opacity: 0, x: -50 }}
@@ -96,7 +97,7 @@ const Contact = () => {
           >
             <h2 className={styles.infoHeading}>Get in Touch</h2>
             <p className={styles.infoDescription}>
-              Feel free to reach out through any of these channels. I&apos;m always excited to discuss new opportunities and innovative projects.
+              Email is the fastest path. GitHub has the public clients and APIs. I&apos;m based in Bengaluru, from Erode.
             </p>
             
             <div className={styles.contactItems}>
@@ -130,6 +131,7 @@ const Contact = () => {
               ))}
             </div>
           </motion.div>
+          </div>
 
           <motion.div 
             className={styles.formContainer}
@@ -137,7 +139,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className={styles.formCard}>
+            <div className={styles.formCard} data-depth>
               <h2 className={styles.formHeading}>Send Message</h2>
               
               <form className={styles.form} onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@
   position: relative;
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
-  background: var(--bg-primary);
+  background: transparent;
   background-image: var(--bg-gradient);
   overflow: hidden;
 }
@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px;
 }
 
 .profileCard {
@@ -31,8 +32,13 @@
   border-radius: 24px;
   padding: 3rem;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
   max-width: 400px;
+  transform-style: preserve-3d;
+}
+
+.profileRing {
+  display: none;
 }
 
 .avatar {
@@ -43,6 +49,7 @@
   box-shadow: 0 0 30px var(--accent-glow);
   margin-bottom: 1.5rem;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .profileInfo {
@@ -100,7 +107,12 @@
 }
 
 .introSection {
-  padding-left: 2rem;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  border-radius: 24px;
+  background: rgba(15, 10, 30, 0.45);
+  border: 1px solid rgba(232, 184, 74, 0.18);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
 }
 
 .roleTitle {
@@ -145,7 +157,7 @@
   height: 48px;
   font-size: 1.2rem;
   color: var(--text-secondary);
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(232, 184, 74, 0.1);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   text-decoration: none;
@@ -154,7 +166,7 @@
 
 .iconLink:hover {
   color: var(--text-primary);
-  background: rgba(120, 119, 198, 0.2);
+  background: rgba(232, 184, 74, 0.2);
   box-shadow: 0 8px 25px var(--accent-glow);
   transform: translateY(-2px);
 }
@@ -165,17 +177,17 @@
   padding: 0.875rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--ink);
   background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   border: none;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 8px 25px rgba(120, 119, 198, 0.3);
+  box-shadow: 0 8px 25px rgba(232, 184, 74, 0.3);
   transition: all 0.3s ease;
 }
 
 .resumeButton:hover {
-  box-shadow: 0 12px 35px rgba(120, 119, 198, 0.4);
+  box-shadow: 0 12px 35px rgba(232, 184, 74, 0.4);
   transform: translateY(-2px);
 }
 
