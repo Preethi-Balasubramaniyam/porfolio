@@ -26,7 +26,7 @@
 .subheading {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 720px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -196,6 +196,7 @@
 .projectLinks {
   display: flex;
   gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .projectLink {
