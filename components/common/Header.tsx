@@ -31,6 +31,7 @@ const Header = () => {
             <Link href="/experience" className={styles.navLink}>Experience</Link>
             <Link href="/tools" className={styles.navLink}>Tools</Link>
             <Link href="/project" className={styles.navLink}>Projects</Link>
+            <Link href="/blog" className={styles.navLink}>Blog</Link>
             <Link href="/contact" className={styles.navLink}>Contact</Link>
           </Nav>
         </Navbar.Collapse>
