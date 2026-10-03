@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: "/writing", destination: "/project", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
