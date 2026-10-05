@@ -22,7 +22,11 @@ const Journal = () => {
 
         <div className={styles.list}>
           {posts.map((post, index) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.card}>
+            <Link
+              key={post.slug}
+              href={{ pathname: "/blog/[slug]", query: { slug: post.slug } }}
+              className={styles.card}
+            >
               <div className={styles.cardMedia}>
                 <Image
                   src={post.image}
